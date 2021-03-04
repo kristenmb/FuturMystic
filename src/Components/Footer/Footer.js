@@ -1,9 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
-function Footer() {
+function Footer({ toggleFooter }) {
   return (
-    <h1>Footer</h1>
+    <footer>
+      <Link to='/' onClick={toggleFooter}> 
+        <button>home</button>
+      </Link>
+      <Link>
+        <button>Start Reading</button>
+      </Link>
+      <Link>
+        <button>Saved Readings</button>
+      </Link>
+    </footer>
   );
 }
 

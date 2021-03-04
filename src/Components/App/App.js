@@ -49,7 +49,7 @@ class App extends Component {
         <SavedReadings />
       
       </Switch>
-      {this.state.isFooterVisible && <Footer />}
+      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter}/>}
     </>
       )
   }
