@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import hand from '../../hand.png'
 import './LandingPage.css'
 
-function LandingPage() {
+function LandingPage({ toggleFooter }) {
   return (
     <section className="landing-page-section">
       <h1>Welcome to FuturMystic</h1>
@@ -12,10 +12,10 @@ function LandingPage() {
         alt="upward facing hand with sparkles above"
         className="welcome-img"
       />
-      <Link to='/info'>
-        <button className="info-btn">Where Do I Start?</button>
+      <Link to='/info' onClick={toggleFooter}>
+        <button className="info-btn">Where Do I Start</button>
       </Link>
-      <Link to='/intention'>
+      <Link to='/intention' onClick={toggleFooter}>
         <button className="begin-btn">Begin a Reading</button>
       </Link>
     </section>
