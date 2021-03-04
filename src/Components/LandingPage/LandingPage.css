@@ -1,0 +1,26 @@
+.landing-page-section {
+  color: #DAB141;
+  background-color: #231E2B;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-img {
+  border-radius: 80rem;
+  width: 20rem;
+  margin: 2rem;
+}
+
+.info-btn,
+.begin-btn {
+  color: #DAB141;
+  background-color: #334239;
+  border-radius: 4rem;
+  height: 3rem;
+  width: 20vw;
+  border: none;
+  margin: 1rem;
+}
