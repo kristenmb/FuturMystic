@@ -17,9 +17,10 @@
 .info-btn,
 .begin-btn {
   color: #DAB141;
-  background-color: #637C7D;
+  background-color: #334239;
   border-radius: 4rem;
-  height: 2rem;
+  height: 3rem;
+  width: 20vw;
   border: none;
   margin: 1rem;
 }

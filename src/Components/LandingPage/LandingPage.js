@@ -6,7 +6,7 @@ import './LandingPage.css'
 function LandingPage() {
   return (
     <section className="landing-page-section">
-      <h1>Welcome</h1>
+      <h1>Welcome to FuturMystic</h1>
       <img 
         src={hand}
         alt="upward facing hand with sparkles above"
