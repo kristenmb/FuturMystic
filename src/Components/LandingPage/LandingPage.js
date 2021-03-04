@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import hand from '../../hand.png'
 import './LandingPage.css'
 
 function LandingPage() {
@@ -7,15 +8,15 @@ function LandingPage() {
     <section className="landing-page-section">
       <h1>Welcome</h1>
       <img 
-        src=""
-        alt=""
+        src={hand}
+        alt="upward facing hand with sparkles above"
         className="welcome-img"
       />
       <Link to='/info'>
-        <button>How to Start</button>
+        <button className="info-btn">Where Do I Start?</button>
       </Link>
       <Link to='/intention'>
-        <button>Begin a Reading</button>
+        <button className="begin-btn">Begin a Reading</button>
       </Link>
     </section>
   );
