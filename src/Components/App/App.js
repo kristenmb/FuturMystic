@@ -46,7 +46,9 @@ class App extends Component {
         />
       <Route 
         path='/intention'
-        component={ Intention }
+        render={() => {
+          return <Intention getReading={this.getReading}/>
+        }}
         />
       <Route
         path='/reading'
