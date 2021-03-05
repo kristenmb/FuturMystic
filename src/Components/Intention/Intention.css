@@ -1,0 +1,19 @@
+.intention-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: #DAB141;
+}
+
+.reading-btn {
+  color: #DAB141;
+  background-color: #334239;
+  border-radius: 4rem;
+  height: 3rem;
+  width: 20vw;
+  border: none;
+  margin: 1rem;
+}
