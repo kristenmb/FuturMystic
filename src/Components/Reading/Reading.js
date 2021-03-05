@@ -1,12 +1,16 @@
 import React from 'react'
 import emptyBookmark from '../../assets/tealemptybookmark.png'
+import example from '../../assets/cards/ar00.jpg'
 import './Reading.css'
 
 function Reading({ cards }) {
   console.log(cards)
   const cardNames = cards.map(card => {
     return (
-      <p>{card.name}</p>
+      <article>
+        <img className="example" src={example}/>
+        <p>{card.name}</p>
+      </article>
     )
   })
   return (
@@ -18,7 +22,9 @@ function Reading({ cards }) {
           className="bookmark"
         />
       </header>
-      {cardNames}
+      <article className="card-container">
+        {cardNames}
+      </article>
       <h1>Past / Present / Future</h1>
       <p></p>
     </section>

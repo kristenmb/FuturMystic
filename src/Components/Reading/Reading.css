@@ -2,3 +2,13 @@
   width: 1.5rem;
   height: 2rem;
 }
+
+.example {
+  width: 10vw
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+
+}
