@@ -5,9 +5,9 @@ import './Reading.css'
 
 function Reading({ cards }) {
   console.log(cards)
-  const cardNames = cards.map(card => {
+  const cardNames = cards.map((card, i) => {
     return (
-      <article>
+      <article key={i} id={i}>
         <img className="example" src={example}/>
         <p>{card.name}</p>
       </article>

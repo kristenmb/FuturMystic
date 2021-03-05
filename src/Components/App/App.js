@@ -15,7 +15,8 @@ class App extends Component {
     super()
     this.state = {
       isFooterVisible: false,
-      cards: []
+      cards: [],
+      selectedCard: null
     }
   }
 
@@ -26,6 +27,11 @@ class App extends Component {
   getReading = () => {
     fetchCards()
       .then(cards => this.setState({cards: cards.cards}))
+  }
+
+  getCardDetails = (event) => {
+    const { id } = event.target
+    this.setState({ selectedCard: this.state.cards[id]})
   }
 
   render() {
@@ -56,6 +62,10 @@ class App extends Component {
           return <Reading cards={this.state.cards}/>
         }}
         />
+
+        {/* create route with match url for /reading/:card
+            pass selectedCard value into cardDetails component
+            create on click for link around cards */}
         <CardDetails />
      
         <SavedReadings />
