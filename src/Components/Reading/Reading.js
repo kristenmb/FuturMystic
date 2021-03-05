@@ -27,8 +27,10 @@ function Reading({ cards, getCardDetails }) {
       <article className="card-container">
         {cardNames}
       </article>
-      <h1>Past / Present / Future</h1>
-      <p></p>
+      <div className="about-reading">
+        <h1 className="reading-type">Past / Present / Future</h1>
+        <p className="about-reading-type">text text text</p>
+      </div>
     </section>
   );
 }
