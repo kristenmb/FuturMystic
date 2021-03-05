@@ -1,9 +1,10 @@
 import React from 'react'
 import './CardDetails.css'
 
-function CardDetails() {
+function CardDetails({ selectedCard }) {
+  console.log(selectedCard)
   return (
-    <h1>Card Details</h1>
+    <h1>{selectedCard.name}</h1>
   );
 }
 

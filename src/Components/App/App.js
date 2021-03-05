@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       isFooterVisible: false,
       cards: [],
-      selectedCard: null
+      selectedCard: {}
     }
   }
 
@@ -30,8 +30,9 @@ class App extends Component {
   }
 
   getCardDetails = (event) => {
-    const { id } = event.target
-    this.setState({ selectedCard: this.state.cards[id]})
+    const id = event.target.id
+    console.log('i\'m here', id)
+    this.setState(prevState => ({ selectedCard: prevState.cards[id]}))
   }
 
   render() {
@@ -57,18 +58,19 @@ class App extends Component {
         }}
         />
       <Route
+        exact
         path='/reading'
         render={() => {
-          return <Reading cards={this.state.cards}/>
+          return <Reading cards={this.state.cards} getCardDetails={this.getCardDetails}/>
         }}
         />
-
-        {/* create route with match url for /reading/:card
-            pass selectedCard value into cardDetails component
-            create on click for link around cards */}
-        <CardDetails />
+      <Route
+          exact
+          path="/reading/:card"
+          render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+        />
      
-        <SavedReadings />
+        {/* <SavedReadings /> */}
       
       </Switch>
       {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter}/>}
