@@ -41,11 +41,12 @@ class App extends Component {
         path='/intention'
         component={ Intention }
         />
+      <Route
+        path='/reading'
+        component={ Reading }
+        />
         <CardDetails />
      
-              
-        <Reading />
-    
         <SavedReadings />
       
       </Switch>
