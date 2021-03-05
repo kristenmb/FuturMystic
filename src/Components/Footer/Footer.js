@@ -16,7 +16,7 @@ function Footer({ toggleFooter }) {
           className="footer-icon"
         />
       </Link>
-      <Link>
+      <Link to='/intention'>
         <img 
           src={cardsBtn}
           alt="Three cards fanned out"
