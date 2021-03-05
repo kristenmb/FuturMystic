@@ -52,7 +52,9 @@ class App extends Component {
         />
       <Route
         path='/reading'
-        component={ Reading }
+        render={() => {
+          return <Reading cards={this.state.cards}/>
+        }}
         />
         <CardDetails />
      
