@@ -7,6 +7,7 @@ import Intention from '../Intention/Intention'
 import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
+import { fetchCards } from '../../util'
 import './App.css';
 
 class App extends Component {
@@ -14,11 +15,17 @@ class App extends Component {
     super()
     this.state = {
       isFooterVisible: false,
+      cards: []
     }
   }
 
   toggleFooter = () => {
     this.setState({ isFooterVisible: !this.state.isFooterVisible})    
+  }
+
+  getReading = () => {
+    fetchCards()
+      .then(cards => this.setState({cards: cards.cards}))
   }
 
   render() {
