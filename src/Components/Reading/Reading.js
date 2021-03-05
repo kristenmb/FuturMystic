@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import emptyBookmark from '../../assets/tealemptybookmark.png'
-import example from '../../assets/cards/ar00.jpg'
+import { cardImages } from '../../cardImageData'
 import './Reading.css'
 
 function Reading({ cards, getCardDetails }) {
@@ -10,8 +10,7 @@ function Reading({ cards, getCardDetails }) {
     return (
       <Link to={`/reading/${card.name}`}>
         <article key={i} >
-          <img className="example" src={example} id={i} onClick={(event) => getCardDetails(event)}/>
-          <p>{card.name}</p>
+          <img className="example" src={cardImages[card.name_short].src} id={i} onClick={(event) => getCardDetails(event)}/>
         </article>
       </Link>
     )
