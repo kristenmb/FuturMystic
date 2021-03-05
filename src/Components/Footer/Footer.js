@@ -1,4 +1,8 @@
 import React from 'react'
+import cardsBtn from '../../assets/tealcards.png'
+import savedReadings from '../../assets/tealgoldsaved.png'
+import home from '../../assets/home.png'
+
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
@@ -6,13 +10,25 @@ function Footer({ toggleFooter }) {
   return (
     <footer>
       <Link to='/' onClick={toggleFooter}> 
-        <button>home</button>
+         <img 
+          src={home}
+          alt="House"
+          className="footer-icon"
+        />
       </Link>
       <Link>
-        <button>Start Reading</button>
+        <img 
+          src={cardsBtn}
+          alt="Three cards fanned out"
+          className="footer-icon"
+        />
       </Link>
       <Link>
-        <button>Saved Readings</button>
+        <img 
+          src={savedReadings}
+          alt="Bookmark with Star"
+          className="footer-saved footer-icon"
+        />
       </Link>
     </footer>
   );
