@@ -8,6 +8,10 @@
   color: #DAB141;
 }
 
+.intention-section p{
+  width: 20vw;
+  text-align: center;
+}
 .reading-btn {
   color: #DAB141;
   background-color: #334239;
