@@ -1,9 +1,22 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Info.css'
 
 function Info() {
   return (
-    <h1>Info</h1>
+    <section className="info-section">
+      <article className="what-article">
+        <h1>What is tarot?</h1>
+        <p>Text text text</p>
+      </article>
+      <article className="how-article">
+        <h1>How do I read the cards?</h1>
+        <p>Text text text</p>
+      </article>
+      <Link to='/intention'>
+      <button className="begin-btn">Begin Reading</button>
+      </Link>
+    </section>
   );
 }
 
