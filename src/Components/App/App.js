@@ -18,7 +18,7 @@ class App extends Component {
       cards: [],
       selectedCard: {},
       isFavorite: false,
-      savedReadings: []
+      userSavedReadings: []
     }
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
     if (!this.state.isFavorite) {
       this.setState(prevState => ({ 
         ...prevState,
-        savedReadings: [...prevState.savedReadings, {[Date.now()]: prevState.cards}],
+        userSavedReadings: [...prevState.userSavedReadings, {[Date.now()]: prevState.cards}],
         isFavorite: true
       }))
     }
@@ -56,42 +56,48 @@ class App extends Component {
       <>
       <Switch>
 
-      <Route        
-        exact path='/'
-        render={() => {
-          return <LandingPage toggleFooter={this.toggleFooter} />
-        }}
-        />      
-      <Route 
-        path='/info'
-        component={ Info }
-        />
-      <Route 
-        path='/intention'
-        render={() => {
-          return <Intention getReading={this.getReading}/>
-        }}
-        />
-      <Route
-        exact
-        path='/reading'
-        render={() => {
-          return <Reading 
-            cards={this.state.cards}
-            getCardDetails={this.getCardDetails}
-            isFavorite={this.state.isFavorite}
-            saveReading={this.saveReading}
+        <Route        
+          exact path='/'
+          render={() => {
+            return <LandingPage toggleFooter={this.toggleFooter} />
+          }}
+          />      
+        <Route 
+          path='/info'
+          component={ Info }
           />
-        }}
-        />
-      <Route
+        <Route 
+          path='/intention'
+          render={() => {
+            return <Intention getReading={this.getReading}/>
+          }}
+          />
+        <Route
           exact
-          path="/reading/:card"
-          render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
-        />
-     
-        {/* <SavedReadings /> */}
-      
+          path='/saved-readings'
+          render={() =>  {
+            return <SavedReadings 
+              userSavedReadings={this.state.userSavedReadings}
+            /> 
+          }}
+        /> 
+        <Route
+          exact
+          path='/reading'
+          render={() => {
+            return <Reading 
+              cards={this.state.cards}
+              getCardDetails={this.getCardDetails}
+              isFavorite={this.state.isFavorite}
+              saveReading={this.saveReading}
+            />
+          }}
+          />
+        <Route
+            exact
+            path='/reading/:card'
+            render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+          />     
       </Switch>
       {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter} resetFavorite={this.resetFavorite}/>}
     </>
