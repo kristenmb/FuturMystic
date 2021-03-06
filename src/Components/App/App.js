@@ -40,7 +40,7 @@ class App extends Component {
     if (!this.state.isFavorite) {
       this.setState(prevState => ({ 
         ...prevState,
-        userSavedReadings: [...prevState.userSavedReadings, {[Date.now()]: prevState.cards}],
+        userSavedReadings: [...prevState.userSavedReadings, {[Date.now()]: prevState.cards, comments: ''}],
         isFavorite: true
       }))
     }
