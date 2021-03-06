@@ -7,6 +7,7 @@ import Intention from '../Intention/Intention'
 import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
+import { fetchCards } from '../../util'
 import './App.css';
 
 class App extends Component {
@@ -14,11 +15,39 @@ class App extends Component {
     super()
     this.state = {
       isFooterVisible: false,
+      cards: [],
+      selectedCard: {},
+      isFavorite: false,
+      savedReadings: []
     }
   }
 
   toggleFooter = () => {
     this.setState({ isFooterVisible: !this.state.isFooterVisible})    
+  }
+
+  getReading = () => {
+    fetchCards()
+      .then(cards => this.setState({cards: cards.cards}))
+  }
+
+  getCardDetails = (event) => {
+    const id = event.target.id
+    this.setState(prevState => ({ selectedCard: prevState.cards[id]}))
+  }
+
+  saveReading = () => {
+    if (!this.state.isFavorite) {
+      this.setState(prevState => ({ 
+        ...prevState,
+        savedReadings: [...prevState.savedReadings, {[Date.now()]: prevState.cards}],
+        isFavorite: true
+      }))
+    }
+  }
+
+  resetFavorite = () => {
+    this.setState({ isFavorite: false })
   }
 
   render() {
@@ -39,18 +68,32 @@ class App extends Component {
         />
       <Route 
         path='/intention'
-        component={ Intention }
+        render={() => {
+          return <Intention getReading={this.getReading}/>
+        }}
         />
       <Route
+        exact
         path='/reading'
-        component={ Reading }
+        render={() => {
+          return <Reading 
+            cards={this.state.cards}
+            getCardDetails={this.getCardDetails}
+            isFavorite={this.state.isFavorite}
+            saveReading={this.saveReading}
+          />
+        }}
         />
-        <CardDetails />
+      <Route
+          exact
+          path="/reading/:card"
+          render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+        />
      
-        <SavedReadings />
+        {/* <SavedReadings /> */}
       
       </Switch>
-      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter}/>}
+      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter} resetFavorite={this.resetFavorite}/>}
     </>
       )
   }

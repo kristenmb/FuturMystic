@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 7vh;
+}
+
+/* .reading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+
+.bookmark {
+  width: 1.5rem;
+  height: 2rem;
+  margin-right: 1.5rem;
+}
+
+.example {
+  width: 20vw
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.about-reading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

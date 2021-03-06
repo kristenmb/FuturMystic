@@ -6,7 +6,7 @@ import home from '../../assets/home.png'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
-function Footer({ toggleFooter }) {
+function Footer({ toggleFooter, resetFavorite }) {
   return (
     <footer>
       <Link to='/' onClick={toggleFooter}> 
@@ -21,6 +21,7 @@ function Footer({ toggleFooter }) {
           src={cardsBtn}
           alt="Three cards fanned out"
           className="footer-icon"
+          onClick={resetFavorite}
         />
       </Link>
       <Link>
