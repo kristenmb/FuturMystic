@@ -37,11 +37,12 @@ class App extends Component {
   }
 
   saveReading = () => {
-    if (!this.state.savedReadings.includes(this.state.cards)) {
+    
+    if (!this.state.isFavorite) {
       this.setState(prevState => ({ 
         ...prevState,
-        savedReadings: [...prevState.savedReadings, prevState.cards],
-        isFavorite: !prevState.isFavorite
+        savedReadings: [...prevState.savedReadings, {[Date.now()]: prevState.cards}],
+        isFavorite: true
       }))
     }
   }
