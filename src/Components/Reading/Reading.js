@@ -6,7 +6,6 @@ import { cardImages } from '../../cardImageData'
 import './Reading.css'
 
 function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
-  console.log(cards)
   const cardNames = cards.map((card, i) => {
     return (
       <Link to={`/reading/${card.name}`}>
