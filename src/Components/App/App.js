@@ -37,7 +37,6 @@ class App extends Component {
   }
 
   saveReading = () => {
-    
     if (!this.state.isFavorite) {
       this.setState(prevState => ({ 
         ...prevState,
@@ -45,6 +44,10 @@ class App extends Component {
         isFavorite: true
       }))
     }
+  }
+
+  resetFavorite = () => {
+    this.setState({ isFavorite: false })
   }
 
   render() {
@@ -90,7 +93,7 @@ class App extends Component {
         {/* <SavedReadings /> */}
       
       </Switch>
-      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter}/>}
+      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter} resetFavorite={this.resetFavorite}/>}
     </>
       )
   }
