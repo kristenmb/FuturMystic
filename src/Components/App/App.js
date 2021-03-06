@@ -16,7 +16,9 @@ class App extends Component {
     this.state = {
       isFooterVisible: false,
       cards: [],
-      selectedCard: {}
+      selectedCard: {},
+      isFavorite: false,
+      savedReadings: []
     }
   }
 
@@ -31,8 +33,17 @@ class App extends Component {
 
   getCardDetails = (event) => {
     const id = event.target.id
-    console.log('i\'m here', id)
     this.setState(prevState => ({ selectedCard: prevState.cards[id]}))
+  }
+
+  saveReading = () => {
+    if (!this.state.savedReadings.includes(this.state.cards)) {
+      this.setState(prevState => ({ 
+        ...prevState,
+        savedReadings: [...prevState.savedReadings, prevState.cards],
+        isFavorite: !prevState.isFavorite
+      }))
+    }
   }
 
   render() {
@@ -61,7 +72,12 @@ class App extends Component {
         exact
         path='/reading'
         render={() => {
-          return <Reading cards={this.state.cards} getCardDetails={this.getCardDetails}/>
+          return <Reading 
+            cards={this.state.cards}
+            getCardDetails={this.getCardDetails}
+            isFavorite={this.state.isFavorite}
+            saveReading={this.saveReading}
+          />
         }}
         />
       <Route
