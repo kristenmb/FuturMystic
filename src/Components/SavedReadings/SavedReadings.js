@@ -19,6 +19,14 @@ class SavedReadings extends Component {
       return (
         <article className="reading-box" key={i}>
           <h2>{date}</h2>
+          <form>
+            <textarea
+              name="comments"
+              id={getDate}
+              value={reading.comments}
+              onChange={this.handleChange}
+            />
+          </form>
         </article>
       )
     })
