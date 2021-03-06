@@ -6,12 +6,27 @@ class SavedReadings extends Component {
   constructor({ userSavedReadings }) {
     super()
     this.state = {
-      userSavedReadings: userSavedReadings,
-
+      userSavedReadings: userSavedReadings
     }
   }
   
- readingBoxes = () => {
+  componentDidMount() {
+    
+  }
+
+  handleChange = (event) => {
+    const { id, value} = event.target
+    
+    this.setState(prevState => ({
+    userSavedReadings: prevState.userSavedReadings.map(
+    item => {
+      const readingDate = Object.keys(item)
+      return (readingDate[0] === id ? Object.assign(item, { comments: value }) : item)
+    })
+  }))
+}
+
+  readingBoxes = () => {
     return this.state.userSavedReadings.map((reading, i) => {
       const getDate = parseInt(Object.keys(reading))
       const reformatDate = new Date(getDate)
