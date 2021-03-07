@@ -36,10 +36,6 @@ class App extends Component {
     this.setState(prevState => ({ selectedCard: prevState.cards[id - 1]}))
   }
 
-  resetSelected = () => {
-    this.setState({ selectedCard: {} })
-  }
-
   saveReading = () => {
     if (!this.state.isFavorite) {
       this.setState(prevState => ({ 
@@ -59,23 +55,22 @@ class App extends Component {
     return (
       <>
       <Switch>
-
         <Route        
           exact path='/'
           render={() => {
             return <LandingPage toggleFooter={this.toggleFooter} />
           }}
-          />      
+        />      
         <Route 
           path='/info'
           component={ Info }
-          />
+        />
         <Route 
           path='/intention'
           render={() => {
             return <Intention getReading={this.getReading}/>
           }}
-          />
+        />
         <Route
           exact
           path='/saved-readings'
@@ -96,14 +91,18 @@ class App extends Component {
               saveReading={this.saveReading}
             />
           }}
-          />
+        />
         <Route
             exact
             path='/reading/:card'
             render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
           />     
       </Switch>
-      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter} resetFavorite={this.resetFavorite}/>}
+      {this.state.isFooterVisible && 
+        <Footer
+          toggleFooter={this.toggleFooter}
+          resetFavorite={this.resetFavorite}
+      />}
     </>
       )
   }
