@@ -1,6 +1,6 @@
 import React from 'react'
 import cardsBtn from '../../assets/tealcards.png'
-import savedReadings from '../../assets/tealgoldsaved.png'
+import saved from '../../assets/tealgoldsaved.png'
 import home from '../../assets/home.png'
 
 import { Link } from 'react-router-dom'
@@ -24,9 +24,9 @@ function Footer({ toggleFooter, resetFavorite }) {
           onClick={resetFavorite}
         />
       </Link>
-      <Link>
+      <Link to='/saved-readings'>
         <img 
-          src={savedReadings}
+          src={saved}
           alt="Bookmark with Star"
           className="footer-saved footer-icon"
         />
