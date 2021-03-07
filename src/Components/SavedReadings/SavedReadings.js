@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { cardImages } from '../../cardImageData'
+import Image from '../Image/Image'
+import { formatDate } from '../../util'
 import './SavedReadings.css'
 
 class SavedReadings extends Component {
   constructor({ userSavedReadings }) {
-    super()
+    super({ userSavedReadings })
     this.state = {
       userSavedReadings: userSavedReadings
     }
@@ -24,17 +26,12 @@ class SavedReadings extends Component {
   readingBoxes = () => {
     return this.state.userSavedReadings.map((reading, i) => {
       const getDate = parseInt(Object.keys(reading))
-      const reformatDate = new Date(getDate)
-      const date = `${reformatDate.getMonth() + 1}/${reformatDate.getDate()}/${reformatDate.getFullYear()}`
+      const date = formatDate(getDate)
       const cardThumbnails = reading[getDate].map(card => {
         return (
-          <img
-            src={cardImages[card.name_short].src}
-            alt={cardImages[card.name_short].alt}
-            className="thumbnails"
-          />
+          <Image imageName={card.name_short} className={"thumbnails"}/>
         )
-        })
+      })
       return (
         <article className="reading-box" key={i}>
           <h2>{date}</h2>

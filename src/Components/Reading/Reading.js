@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Image from '../Image/Image'
 import emptyBookmark from '../../assets/tealemptybookmark.png'
 import fullBookmark from '../../assets/tealfullbookmark.png'
 import { cardImages } from '../../cardImageData'
@@ -10,9 +11,9 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
     return (
       <Link to={`/reading/${card.name}`}>
         <article key={i} >
-          <img
-            className="example"
-            src={cardImages[card.name_short].src}
+          <Image
+            imageName={card.name_short}
+            className={"reading-card"}
             id={i}
             onClick={(event) => getCardDetails(event)}
           />
