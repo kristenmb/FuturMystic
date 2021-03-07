@@ -8,7 +8,6 @@ import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
 import { fetchCards } from '../../util'
-import './App.css';
 
 class App extends Component {
   constructor() {
