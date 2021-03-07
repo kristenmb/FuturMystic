@@ -8,7 +8,6 @@ import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
 import { fetchCards } from '../../util'
-import './App.css';
 
 class App extends Component {
   constructor() {
@@ -33,7 +32,7 @@ class App extends Component {
 
   getCardDetails = (event) => {
     const id = event.target.id
-    this.setState(prevState => ({ selectedCard: prevState.cards[id]}))
+    this.setState(prevState => ({ selectedCard: prevState.cards[id - 1]}))
   }
 
   saveReading = () => {
@@ -55,23 +54,22 @@ class App extends Component {
     return (
       <>
       <Switch>
-
         <Route        
           exact path='/'
           render={() => {
             return <LandingPage toggleFooter={this.toggleFooter} />
           }}
-          />      
+        />      
         <Route 
           path='/info'
           component={ Info }
-          />
+        />
         <Route 
           path='/intention'
           render={() => {
             return <Intention getReading={this.getReading}/>
           }}
-          />
+        />
         <Route
           exact
           path='/saved-readings'
@@ -92,14 +90,18 @@ class App extends Component {
               saveReading={this.saveReading}
             />
           }}
-          />
+        />
         <Route
             exact
             path='/reading/:card'
             render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
           />     
       </Switch>
-      {this.state.isFooterVisible && <Footer toggleFooter={this.toggleFooter} resetFavorite={this.resetFavorite}/>}
+      {this.state.isFooterVisible && 
+        <Footer
+          toggleFooter={this.toggleFooter}
+          resetFavorite={this.resetFavorite}
+      />}
     </>
       )
   }

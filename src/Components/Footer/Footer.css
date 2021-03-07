@@ -2,6 +2,8 @@ footer {
   display: flex;
   justify-content: center;
   width: 100vw;
+  height: 6rem;
+  background-color: #231E2B;
   position: fixed;
   bottom: 0;
 }

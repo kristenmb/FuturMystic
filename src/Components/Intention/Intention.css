@@ -1,23 +1,28 @@
 .intention-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 8rem;
   width: 100vw;
   height: 100vh;
   color: #DAB141;
 }
 
 .intention-section p{
-  width: 20vw;
+  width: 10rem;
   text-align: center;
 }
+
 .reading-btn {
   color: #DAB141;
   background-color: #334239;
   border-radius: 4rem;
   height: 3rem;
-  width: 20vw;
+  width: 20rem;
   border: none;
   margin: 1rem;
+}
+
+.stars {
+  width: 6rem
 }

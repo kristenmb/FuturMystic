@@ -3,13 +3,19 @@
   flex-direction: column;
   align-items: center;
   color: #DAB141;
+}
 
+.saved-section p{
+  width: 24rem;
+  text-align: center;
 }
 
 .saved-container {
   display: flex;
   flex-wrap: wrap;
-  width: 90vw;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 10rem;
 }
 
 textarea {
@@ -17,14 +23,16 @@ textarea {
   background-repeat: no-repeat;
   background-size: 1.3rem;
   text-indent: 2.5em;
-  line-height: 1.5rem;
+  line-height: 1.2rem;
+  padding: .5rem;
   height: 20vh;
-  width: 20vw;
+  width: 15rem;
   background-color: #575757;
   background-position: top 0.5rem left 0.5rem;
   color: #DAB141;
-  border-radius: 2rem
-
+  border-radius: 2rem;
+  font-family: 'Dosis',
+  sans-serif;
 }
 
 .thumbnails {
@@ -37,7 +45,13 @@ textarea {
   flex-direction: column;
   align-items: center;
   margin: 1.5rem;
-  width: 25vw;
+  width: 20rem;
   border: 2pt solid #575757;
   border-style: inset;
+}
+
+@media screen and (max-width: 500px) {
+  .saved-section p {
+    width: 18rem;
+  }
 }

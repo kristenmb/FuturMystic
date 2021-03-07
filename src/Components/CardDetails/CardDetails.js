@@ -26,8 +26,6 @@ function CardDetails({ selectedCard }) {
           <h1>{selectedCard.name}</h1>
           <h2>Meaning:</h2>
           <p>{selectedCard.meaning_up}</p>
-          <h2>Reversed:</h2>
-          <p>{selectedCard.meaning_rev}</p>
         </article>
       </section>
     </>
