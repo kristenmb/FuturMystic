@@ -80,3 +80,41 @@ export const cardImages = {
   waqu: {src: './cards/waqu.jpg', alt: "A snake protectively wraps itself around it's eggs and a wand."},  
 }
 
+export const tarotInfo = "The tarot deck is made up of two parts, the major and minor arcana. The major arcana is made up of 22 cards that signify the entire journey of the psyche. These are the characters and themes that hold us back and set us free. When these cares appear in your reading, they indicate deeply rooted issues within our lives, pay close attention to their significance. The minor arcana is made up of four suits: wands, cups, swords, and pentacles. Each suit has 14 cards, the 11th to 14th cards are the court cards, and often represent an actual person in your life."
+
+export const tarotSuits = "Wands represent inspiration and creativity, and relate to our ambitions, goals, and dreams. Ruled by fire. Cups represent emotions, and address to our relationships and connections to others. Speak of love, friendship, and all that lies between. Ruled by water. Swords represent action and intellect, they address change, conflict, power, and point to the constructive and destructive tendencies within us all. Ruled by air. Pentacles represent worldly possessions, and relate to issues involving our home, money, or career. Reflect upon our generosity and greed. Ruled by earth."
+
+//I formatted these pieces of content as HTML tags to help clean up the components they are used in and make them more readable.
+export const howToRead = [
+  <p className="about-tarot" key={1}>
+    Before you begin a reading, you must focus your mind and clarify your intentions for the reading. What do you want to know? Why do you want to know it? It is better to focus on a specific question to get a clear answer from the cards. Once you have found your question, hold it in your mind and repeat it, either out loud or internally.
+  </p>,
+  <p className="about-tarot" key={1}>
+    It’s important to remember that tarot can help you interpret your current situation, or provide inspiration to find more insight in your current situation. Do not rely on the cards to answer your most important choices in life, but do consult them and find moments of self reflection from their answers.
+  </p>
+]
+
+export const readingCards = [
+  <p className="card-how-to" key={1}>
+    First card: Influences from the past that still affect the situation
+  </p>,
+  <p className="card-how-to" key={2}>
+    Second card: The Present - all that surrounds you currently
+  </p>,
+  <p className="card-how-to" key={3}>
+    Third card: The likely future or outcome of this situation
+  </p>
+]
+
+export const threeCardHowTo = [
+  <p className="about-reading-type" key={4}>
+    Three card spreads are extremely helpful. They can quickly clarify a situation and are simpler to interpret than many other readings. It can be used to cut to the heart of any situation. If Past / Present / Future doesn’t feel like an applicable format, consider a Body / Mind / Spirit template.
+  </p>,
+  <p className="about-reading-type" key={5}>
+    Consider your initial question, how do these cards play into that situation? What reflections can you make about the overarching situation? Remember that even if a card has what feels like negative meaning or imagery, it doesn’t mean your reading is negative. The cards are trying to point out a part of the story you haven’t acknowledged but is integral to your journey. Consider why that card may have appeared.
+  </p>,
+  <p className="about-reading-type" key={6}>
+    If you would like to take notes on this reading and your reflections, you can save the reading and visit your saved readings tab to add comments about the reading!
+  </p>
+
+]

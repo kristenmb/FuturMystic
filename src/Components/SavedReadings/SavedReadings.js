@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { cardImages } from '../../cardImageData'
 import Image from '../Image/Image'
 import { formatDate } from '../../util'
 import './SavedReadings.css'

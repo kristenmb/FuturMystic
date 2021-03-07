@@ -1,5 +1,5 @@
 import React from 'react'
-import { cardImages } from '../../cardImageData'
+import { cardImages } from '../../tarotData'
 
 const Images = ({imageName, className, id, onClick}) => {
   return (
