@@ -5,3 +5,8 @@ export const fetchCards = () => {
       return response.json()
     })
 }
+
+export const formatDate = (date) => {
+  const reformatDate = new Date(date)
+  return `${reformatDate.getMonth() + 1}/${reformatDate.getDate()}/${reformatDate.getFullYear()}`
+}
