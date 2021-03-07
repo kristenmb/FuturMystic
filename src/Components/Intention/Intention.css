@@ -4,7 +4,6 @@
   align-items: center;
   margin-top: 8rem;
   width: 100vw;
-  height: 100vh;
   color: #DAB141;
 }
 
@@ -18,7 +17,7 @@
   background-color: #334239;
   border-radius: 4rem;
   height: 3rem;
-  width: 20rem;
+  width: 15rem;
   border: none;
   margin: 1rem;
 }
