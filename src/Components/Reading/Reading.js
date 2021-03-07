@@ -7,7 +7,7 @@ import { readingCards, threeCardHowTo } from '../../tarotData'
 import './Reading.css'
 
 function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
-  const cardNames = cards.map((card, i) => {
+  const cardImages = cards.map((card, i) => {
     return (
       <Link to={`/reading/${card.name}`}  key={i} >
         <article>
@@ -32,7 +32,7 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
         />
       </header>
       <article className="card-container">
-        {cardNames}
+        {cardImages}
       </article>
       <div className="about-reading">
         <h1 className="reading-type">Past / Present / Future</h1>

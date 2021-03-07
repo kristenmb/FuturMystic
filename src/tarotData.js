@@ -96,13 +96,13 @@ export const howToRead = [
 
 export const readingCards = [
   <p className="card-how-to" key={1}>
-    First card: Influences from the past that still affect the situation
+    First card: <br/> Previous influences still affecting the situation
   </p>,
   <p className="card-how-to" key={2}>
-    Second card: The Present - all that surrounds you currently
+    Second card:<br/>  All that surrounds you currently
   </p>,
   <p className="card-how-to" key={3}>
-    Third card: The likely future or outcome of this situation
+    Third card: <br/> The likely future or outcome of this situation
   </p>
 ]
 
@@ -114,7 +114,7 @@ export const threeCardHowTo = [
     Consider your initial question, how do these cards play into that situation? What reflections can you make about the overarching situation? Remember that even if a card has what feels like negative meaning or imagery, it doesn’t mean your reading is negative. The cards are trying to point out a part of the story you haven’t acknowledged but is integral to your journey. Consider why that card may have appeared.
   </p>,
   <p className="about-reading-type" key={6}>
-    If you would like to take notes on this reading and your reflections, you can save the reading and visit your saved readings tab to add comments about the reading!
+    If you would like to take notes on this reading and your reflections, you can save the reading and visit your saved readings tab to add comments.
   </p>
 
 ]
