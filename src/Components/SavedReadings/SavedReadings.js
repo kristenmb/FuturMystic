@@ -55,7 +55,7 @@ class SavedReadings extends Component {
     return (
       <section className="saved-section">
         <h1>My Saved Readings</h1>
-        <p>Add notes about your reading here, context</p>
+        <p>Add notes about your readings here  -  reflections, thoughts, or context  -  anything that may help your understanding of the spread.</p>
         <div className="saved-container">
           {this.readingBoxes()}
         </div>
