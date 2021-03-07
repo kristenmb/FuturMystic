@@ -33,7 +33,11 @@ class App extends Component {
 
   getCardDetails = (event) => {
     const id = event.target.id
-    this.setState(prevState => ({ selectedCard: prevState.cards[id]}))
+    this.setState(prevState => ({ selectedCard: prevState.cards[id - 1]}))
+  }
+
+  resetSelected = () => {
+    this.setState({ selectedCard: {} })
   }
 
   saveReading = () => {

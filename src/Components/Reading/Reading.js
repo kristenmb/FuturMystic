@@ -14,7 +14,7 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
           <Image
             imageName={card.name_short}
             className={"reading-card"}
-            id={i}
+            id={i+1}
             onClick={(event) => getCardDetails(event)}
           />
         </article>
