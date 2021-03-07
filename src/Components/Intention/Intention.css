@@ -1,8 +1,8 @@
 .intention-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 8rem;
   width: 100vw;
   height: 100vh;
   color: #DAB141;
@@ -21,4 +21,8 @@
   width: 20rem;
   border: none;
   margin: 1rem;
+}
+
+.stars {
+  width: 6rem
 }
