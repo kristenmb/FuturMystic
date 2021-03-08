@@ -29,7 +29,8 @@ class App extends Component {
 
   getReading = () => {
     fetchCards()
-      .then(cards => this.setState({cards: cards.cards}))
+      .then(cards => this.setState({ cards: cards.cards }))
+      .catch(error => this.setState({ error: true }))
   }
 
   getCardDetails = (event) => {
@@ -51,10 +52,16 @@ class App extends Component {
     this.setState({ isFavorite: false })
   }
 
+  resetError = () => {
+    this.setState({ error: false })
+  }
+
   render() {
 
     return (
       <>
+      {this.state.error && <Error resetError={this.resetError}/>}
+      {!this.state.error && 
       <Switch>
         <Route        
           exact path='/'
@@ -98,8 +105,8 @@ class App extends Component {
             path='/reading/:card'
             render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
           />     
-      </Switch>
-      {this.state.isFooterVisible && 
+      </Switch>}
+      {this.state.isFooterVisible && !this.state.error &&
         <Footer
           toggleFooter={this.toggleFooter}
           resetFavorite={this.resetFavorite}
