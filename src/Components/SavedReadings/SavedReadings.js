@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { cardImages } from '../../cardImageData'
 import Image from '../Image/Image'
 import { formatDate } from '../../util'
 import './SavedReadings.css'
@@ -16,10 +15,10 @@ class SavedReadings extends Component {
     const { id, value} = event.target
     
     this.setState(prevState => ({
-    userSavedReadings: prevState.userSavedReadings.map(item => {
-      const readingDate = Object.keys(item)
-      return (readingDate[0] === id ? Object.assign(item, { comments: value }) : item)
-    })
+      userSavedReadings: prevState.userSavedReadings.map(item => {
+        const readingDate = Object.keys(item)
+        return (readingDate[0] === id ? Object.assign(item, { comments: value }) : item)
+      })
     }))
   }
 

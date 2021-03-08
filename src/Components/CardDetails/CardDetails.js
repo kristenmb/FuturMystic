@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import arrow from '../../assets/backarrow.png'
-import { cardImages } from '../../cardImageData'
+import { cardImages } from '../../tarotData'
 import './CardDetails.css'
 
 function CardDetails({ selectedCard }) {

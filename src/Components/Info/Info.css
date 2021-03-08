@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   color: #DAB141;
 }
 
@@ -21,12 +20,20 @@
   align-items: center;
 }
 
-.begin-btn {
+a .begin-btn {
   color: #DAB141;
   background-color: #334239;
   border-radius: 4rem;
   height: 3rem;
-  width: 20vw;
+  width: 15rem;
   border: none;
-  margin: 1rem;
+  margin: 1rem 1rem 10rem 1rem;
+}
+
+.about-tarot {
+  width: 50vw;
+  text-align: center;
+  line-height: 2rem;
+  color: #69DC9E;
+  font-size: 15pt;
 }
