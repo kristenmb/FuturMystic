@@ -7,6 +7,7 @@ import Intention from '../Intention/Intention'
 import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
+import Gallery from '../Gallery/Gallery'
 import Error from '../Error/Error'
 import { fetchCards } from '../../util'
 
@@ -88,7 +89,15 @@ class App extends Component {
               userSavedReadings={this.state.userSavedReadings}
             /> 
           }}
-        /> 
+        />
+        <Route
+          exact
+          path='/gallery'
+          render={() =>  {
+            return <Gallery
+            /> 
+          }}
+        />
         <Route
           exact
           path='/reading'
