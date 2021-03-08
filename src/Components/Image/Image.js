@@ -1,5 +1,6 @@
 import React from 'react'
 import { cardImages } from '../../tarotData'
+import PropTypes from 'prop-types'
 
 const Images = ({imageName, className, id, onClick}) => {
   return (
@@ -14,3 +15,10 @@ const Images = ({imageName, className, id, onClick}) => {
 }
 
 export default Images
+
+Images.propTypes = {
+  imageName: PropTypes.string,
+  className: PropTypes.string,
+  id: PropTypes.number,
+  onClick: PropTypes.func
+}
