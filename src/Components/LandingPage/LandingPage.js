@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import hand from '../../hand.png'
+import PropTypes from 'prop-types'
 import './LandingPage.css'
 
 function LandingPage({ toggleFooter }) {
@@ -22,4 +23,8 @@ function LandingPage({ toggleFooter }) {
   );
 }
 
-export default LandingPage;
+export default LandingPage
+
+LandingPage.propTypes = {
+  toggleFooter: PropTypes.func
+}
