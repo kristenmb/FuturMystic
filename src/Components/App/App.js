@@ -28,6 +28,7 @@ class App extends Component {
   }
 
   getReading = () => {
+    this.setState({ cards: [] })
     fetchCards()
       .then(cards => this.setState({ cards: cards.cards }))
       .catch(error => this.setState({ error: true }))
