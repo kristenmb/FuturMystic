@@ -128,24 +128,49 @@ describe('FuturMystic - Reading Page', () => {
 
   it ('Should display the reading page, with cards, info about reading, footer, and save button', () => {
     cy.get('.reading-section')
-    .get('.card-container').find('.reading-card').should('have.length', 3)
+      .get('.card-container').find('.reading-card').should('have.length', 3)
+      .get('.about-reading').find('.reading-type').should('contain', 'Past')
+      .get('.about-reading').find('.card-how-to').should('have.length', 3)
+      .get('.about-reading').find('.about-reading-type').should('have.length', 3)
+      .get('.about-reading-type').eq(0).should('contain', 'Three card spreads')
+      .get('.about-reading-type').eq(1).should('contain', 'Consider your initial')
+      .get('.about-reading-type').eq(2).should('contain', 'If you would like')
+
+    cy.get('footer').should('be.visible')
+
+    cy.get('header').should('be.visible')
+
     cy.url(`${baseUrl}/reading`)
   })
 
   it ('Should be able to click each card to view details', () => {
+    cy.get('.card-container').find('.reading-card').eq(0).click()
+    cy.get('.details-section').should('be.visible')
+    cy.get('.back-arrow').click()
+
+    cy.get('.card-container').find('.reading-card').eq(1).click()
+    cy.get('.details-section').should('be.visible')
+    cy.get('.back-arrow').click()
     
+    cy.get('.card-container').find('.reading-card').eq(2).click()
+    cy.get('.details-section').should('be.visible')
+    cy.get('.back-arrow').click()
   })
 
   it ('Should be able to save the reading using the bookmark button - button image should change', () => {
-    
+    cy.get('.bookmark').should('have.attr', 'alt', 'Outline of bookmark')
+    cy.get('.bookmark').click()
+    cy.get('.bookmark').should('have.attr', 'alt', 'Filled bookmark')
   })
 
   it ('Should be able to navigate to see the saved reading using the footer', () => {
-    
+    cy.get('footer .footer-icon').eq(2).click()
+    cy.get('.saved-section').should('be.visible')
+    cy.get('.reading-box').should('be.visible')
   })
 })
     
-describe('FuturMystic - Card Details Page', () => {
+describe.skip('FuturMystic - Card Details Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 

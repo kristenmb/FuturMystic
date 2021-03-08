@@ -70,16 +70,19 @@ class App extends Component {
           }}
         />      
         <Route 
+          exact
           path='/info'
           component={ Info }
         />
-        <Route 
+        <Route
+          exact
           path='/intention'
           render={() => {
             return <Intention getReading={this.getReading}/>
           }}
         />
         <Route
+          exact
           path='/saved-readings'
           render={() =>  {
             return <SavedReadings 
@@ -88,6 +91,7 @@ class App extends Component {
           }}
         /> 
         <Route
+          exact
           path='/reading'
           render={() => {
             return <Reading 
@@ -99,9 +103,9 @@ class App extends Component {
           }}
         />
         <Route
-            exact
-            path='/reading/:card'
-            render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+          exact
+          path='/reading/:card'
+          render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
           />
         <Route
           path='/*'
