@@ -21,6 +21,7 @@ class App extends Component {
       isFavorite: false,
       userSavedReadings: [],
       fullDeck: [],
+      returnLocation: '',
       error: false
     }
   }
@@ -42,9 +43,10 @@ class App extends Component {
       .catch(error => this.setState({ error: true }))
   }
 
-  getCardDetails = (event) => {
+  getCardDetails = (source, location, event) => {
     const id = event.target.id
-    this.setState(prevState => ({ selectedCard: prevState.cards[id - 1]}))
+    this.setState(prevState => ({ selectedCard: prevState[source][id - 1] }))
+    this.setState({ returnLocation: location })
   }
 
   saveReading = () => {
