@@ -2,7 +2,7 @@ import React from 'react'
 import cardsBtn from '../../assets/tealcards.png'
 import saved from '../../assets/tealgoldsaved.png'
 import home from '../../assets/home.png'
-
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
@@ -36,3 +36,8 @@ function Footer({ toggleFooter, resetFavorite }) {
 }
 
 export default Footer;
+
+Footer.propTypes = {
+  toggleFooter: PropTypes.func,
+  resetFavorite: PropTypes.func
+}
