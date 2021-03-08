@@ -170,7 +170,7 @@ describe('FuturMystic - Reading Page', () => {
   })
 })
     
-describe.skip('FuturMystic - Card Details Page', () => {
+describe('FuturMystic - Card Details Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 
@@ -195,7 +195,7 @@ describe.skip('FuturMystic - Card Details Page', () => {
       .get('h1').should('contain', 'Nine of Wands')
       .get('h2').should('contain', 'Meaning')
       .get('p').should('contain', 'The card signifies')
-      
+
     cy.url().should('contain', '/Nine%20of%20Wands')
   })
 
@@ -205,7 +205,7 @@ describe.skip('FuturMystic - Card Details Page', () => {
   })
 })
 
-describe.skip('FuturMystic - Saved Readings Page', () => {
+describe('FuturMystic - Saved Readings Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 
@@ -248,7 +248,7 @@ describe.skip('FuturMystic - Saved Readings Page', () => {
   })
 })
 
-describe.skip('FuturMystic - Error Handling', () => {
+describe.only('FuturMystic - Error Handling', () => {
 
   const baseUrl = 'http://localhost:3000'
 
@@ -267,6 +267,7 @@ describe.skip('FuturMystic - Error Handling', () => {
   })
 
   it ('Should be able to click the home button and be take back to the landing page.', () => {
-    
+    cy.get('.footer-icon').click()
+      .get('.landing-page-section').should('be.visible')
   })
 })
