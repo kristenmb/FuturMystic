@@ -6,6 +6,7 @@
 .details-section {
   display: flex;
   justify-content: center;
+  animation: fadeIn ease 3s;
 }
 
 .details-text {
@@ -62,5 +63,15 @@ h2 {
 @media screen and (max-width: 500px) {
   .details-text {
     width: 60vw;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
