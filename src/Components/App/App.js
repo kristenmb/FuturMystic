@@ -7,6 +7,7 @@ import Intention from '../Intention/Intention'
 import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
+import Error from '../Error/Error'
 import { fetchCards } from '../../util'
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
       cards: [],
       selectedCard: {},
       isFavorite: false,
-      userSavedReadings: []
+      userSavedReadings: [],
+      error: false
     }
   }
 
