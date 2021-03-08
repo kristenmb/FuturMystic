@@ -104,7 +104,11 @@ class App extends Component {
             exact
             path='/reading/:card'
             render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
-          />     
+          />
+        <Route
+          path='/*'
+          render={() => <Error resetError={this.resetError}/>}
+        />
       </Switch>}
       {this.state.isFooterVisible && !this.state.error &&
         <Footer
