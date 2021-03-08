@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Footer from '../Footer/Footer'
 import arrow from '../../assets/backarrow.png'
 import { cardImages } from '../../tarotData'
 import PropTypes from 'prop-types'
 import './CardDetails.css'
 
-function CardDetails({ selectedCard }) {
+function CardDetails({ selectedCard, returnLocation }) {
   return (
     <>
       <header className="details-header">
-        <Link to='/reading'>
+        <Link to={`/${returnLocation}`}>
           <img
             className="back-arrow"
             src={arrow}

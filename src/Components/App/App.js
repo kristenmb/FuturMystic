@@ -110,6 +110,13 @@ class App extends Component {
           }}
         />
         <Route
+            exact
+            path='/gallery/:card'
+            render={() => <CardDetails 
+              selectedCard={this.state.selectedCard}
+              returnLocation={this.state.returnLocation}/>}
+          />
+        <Route
           exact
           path='/reading'
           render={() => {
@@ -124,7 +131,9 @@ class App extends Component {
         <Route
             exact
             path='/reading/:card'
-            render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+            render={() => <CardDetails
+              selectedCard={this.state.selectedCard}
+              returnLocation={this.state.returnLocation}/>}
           />
         <Route
           path='/*'
