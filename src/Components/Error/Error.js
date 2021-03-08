@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import home from '../../assets/home.png'
+import PropTypes from 'prop-types'
 import './Error.css'
 
 const Error = ({ resetError }) => {
@@ -20,3 +21,7 @@ const Error = ({ resetError }) => {
 }
 
 export default Error
+
+Error.propTypes = {
+  resetError: PropTypes.func
+}
