@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import stars from '../../assets/tealstars.png'
+import PropTypes from 'prop-types'
 import './Intention.css'
 
 function Intention({ getReading }) {
@@ -20,4 +21,8 @@ function Intention({ getReading }) {
   );
 }
 
-export default Intention;
+export default Intention
+
+Intention.propTypes = {
+  getReading: PropTypes.func
+}
