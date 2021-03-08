@@ -80,16 +80,22 @@ export const cardImages = {
   waqu: {src: './cards/waqu.jpg', alt: "A snake protectively wraps itself around it's eggs and a wand."},  
 }
 
-export const tarotInfo = "The tarot deck is made up of two parts, the major and minor arcana. The major arcana is made up of 22 cards that signify the entire journey of the psyche. These are the characters and themes that hold us back and set us free. When these cares appear in your reading, they indicate deeply rooted issues within our lives, pay close attention to their significance. The minor arcana is made up of four suits: wands, cups, swords, and pentacles. Each suit has 14 cards, the 11th to 14th cards are the court cards, and often represent an actual person in your life."
-
-export const tarotSuits = "Wands represent inspiration and creativity, and relate to our ambitions, goals, and dreams. Ruled by fire. Cups represent emotions, and address to our relationships and connections to others. Speak of love, friendship, and all that lies between. Ruled by water. Swords represent action and intellect, they address change, conflict, power, and point to the constructive and destructive tendencies within us all. Ruled by air. Pentacles represent worldly possessions, and relate to issues involving our home, money, or career. Reflect upon our generosity and greed. Ruled by earth."
 
 //I formatted these pieces of content as HTML tags to help clean up the components they are used in and make them more readable.
-export const howToRead = [
+export const tarotInfo = [
   <p className="about-tarot" key={1}>
+    The tarot deck is made up of two parts, the major and minor arcana. The major arcana is made up of 22 cards that signify the entire journey of the psyche. These are the characters and themes that hold us back and set us free. When these cares appear in your reading, they indicate deeply rooted issues within our lives, pay close attention to their significance. The minor arcana is made up of four suits: wands, cups, swords, and pentacles. Each suit has 14 cards, the 11th to 14th cards are the court cards, and often represent an actual person in your life.
+  </p>,
+    <p className="about-tarot" key={2}>
+    Wands represent inspiration and creativity, and relate to our ambitions, goals, and dreams. Ruled by fire. Cups represent emotions, and address to our relationships and connections to others. Speak of love, friendship, and all that lies between. Ruled by water. Swords represent action and intellect, they address change, conflict, power, and point to the constructive and destructive tendencies within us all. Ruled by air. Pentacles represent worldly possessions, and relate to issues involving our home, money, or career. Reflect upon our generosity and greed. Ruled by earth.
+  </p>
+]
+
+export const howToRead = [
+  <p className="about-tarot" key={3}>
     Before you begin a reading, you must focus your mind and clarify your intentions for the reading. What do you want to know? Why do you want to know it? It is better to focus on a specific question to get a clear answer from the cards. Once you have found your question, hold it in your mind and repeat it, either out loud or internally.
   </p>,
-  <p className="about-tarot" key={1}>
+  <p className="about-tarot" key={4}>
     It’s important to remember that tarot can help you interpret your current situation, or provide inspiration to find more insight in your current situation. Do not rely on the cards to answer your most important choices in life, but do consult them and find moments of self reflection from their answers.
   </p>
 ]

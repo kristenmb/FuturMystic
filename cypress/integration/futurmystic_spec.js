@@ -36,23 +36,45 @@ describe('FuturMystic - Info Page', () => {
 
   before(() => {
     cy.visit(baseUrl)
+    cy.get('.landing-page-section').find('.info-btn').click()
   })
 
   it ('Should display the info page, with text areas, button, and footer', () => {
-    //
-    //url
+    cy.get('.info-section').get('.what-article').find('h1').should('contain', 'What is tarot?')
+    cy.get('.info-section').get('.what-article').find('.about-tarot').eq(0).should('contain', 'The tarot deck')
+    cy.get('.info-section').get('.what-article').find('.about-tarot').eq(1).should('contain', 'Wands represent inspiration')
+
+    cy.get('.info-section').get('.how-article').find('h1').should('contain', 'How do I read the cards?')
+    cy.get('.info-section').get('.how-article').find('.about-tarot').eq(0).should('contain', 'Before you begin')
+    cy.get('.info-section').get('.how-article').find('.about-tarot').eq(1).should('contain', 'important to remember ')
+
+    cy.get('.info-section').get('.begin-btn').should('contain', 'Begin Reading')
+    
+    cy.get('footer').should('be.visible')
+    cy.url().should('contain', '/info')
   })
 
   it ('Should be able to click the \'Begin Reading\' button and be taken to the intentions page', () => {
-    
+    cy.get('.info-section').get('.begin-btn').click()
+    cy.get('.intention-section').should('be.visible')
+    cy.get('footer .footer-icon').eq(0).click()
+    cy.get('.landing-page-section').find('.info-btn').click()
   })
 
    it ('Should be able to use the footer buttons to navigate through the site', () => {
-    
+    cy.get('footer').find('.footer-icon').should('have.length', 3)
+    cy.get('footer .footer-icon').eq(0).click()
+    cy.get('.landing-page-section').find('.info-btn').click()
+
+    cy.get('footer .footer-icon').eq(1).click()
+    cy.get('.intention-section').should('be.visible')
+
+    cy.get('footer .footer-icon').eq(2).click()
+    cy.get('.saved-section').should('be.visible')
   })
 })
 
-describe('FuturMystic - Intentions Page', () => {
+describe.skip('FuturMystic - Intentions Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 
