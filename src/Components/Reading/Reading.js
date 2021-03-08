@@ -4,6 +4,7 @@ import Image from '../Image/Image'
 import emptyBookmark from '../../assets/tealemptybookmark.png'
 import fullBookmark from '../../assets/tealfullbookmark.png'
 import { readingCards, threeCardHowTo } from '../../tarotData'
+import PropTypes from 'prop-types'
 import './Reading.css'
 
 function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
@@ -47,4 +48,11 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
   );
 }
 
-export default Reading;
+export default Reading
+
+Reading.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object),
+  getCardDetails: PropTypes.func,
+  isFavorite: PropTypes.bool,
+  saveReading: PropTypes.func
+}
