@@ -248,7 +248,7 @@ describe('FuturMystic - Saved Readings Page', () => {
   })
 })
 
-describe.only('FuturMystic - Error Handling', () => {
+describe('FuturMystic - Error Handling', () => {
 
   const baseUrl = 'http://localhost:3000'
 
