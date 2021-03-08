@@ -15,10 +15,10 @@ class SavedReadings extends Component {
     const { id, value} = event.target
     
     this.setState(prevState => ({
-    userSavedReadings: prevState.userSavedReadings.map(item => {
-      const readingDate = Object.keys(item)
-      return (readingDate[0] === id ? Object.assign(item, { comments: value }) : item)
-    })
+      userSavedReadings: prevState.userSavedReadings.map(item => {
+        const readingDate = Object.keys(item)
+        return (readingDate[0] === id ? Object.assign(item, { comments: value }) : item)
+      })
     }))
   }
 
