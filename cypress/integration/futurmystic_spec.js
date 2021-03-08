@@ -7,16 +7,26 @@ describe('FuturMystic - Landing Page', () => {
   })
 
   it ('Should display the landing page, with greeting, picture, and two buttons', () => {
-    //
-    //url
+    cy.get('.landing-page-section').should('be.visible')
+    cy.get('.landing-page-section').find('h1').should('contain', 'Welcome to FuturMystic')
+    cy.get('.landing-page-section').find('.welcome-img').should('have.attr', 'src', '/static/media/hand.6e5b66c7.png')
+    cy.get('.landing-page-section').find('.info-btn').should('contain', 'Where Do I Start')
+    cy.get('.landing-page-section').find('.begin-btn').should('contain', 'Begin a Reading')
+   
+    cy.url().should('contain', baseUrl)
   })
 
   it ('Should be able to click the \'Where do I Start\' button and be taken to the info page', () => {
-    
+    cy.get('.landing-page-section').find('.info-btn').click()
+    cy.get('.info-section').should('be.visible')
+    cy.url().should('contain', `${baseUrl}/info`)
+    cy.get('footer .footer-icon').eq(0).click()
   })
 
   it ('Should be able to click the \'Begin Reading\' button and be taken to the intentions page', () => {
-    
+    cy.get('.landing-page-section').find('.begin-btn').click()
+    cy.get('.intention-section').should('be.visible')
+    cy.url().should('contain', `${baseUrl}/intention`)
   })
 })
 

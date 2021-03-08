@@ -80,7 +80,6 @@ class App extends Component {
           }}
         />
         <Route
-          exact
           path='/saved-readings'
           render={() =>  {
             return <SavedReadings 
@@ -89,7 +88,6 @@ class App extends Component {
           }}
         /> 
         <Route
-          exact
           path='/reading'
           render={() => {
             return <Reading 
