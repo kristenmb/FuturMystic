@@ -5,8 +5,8 @@ import './Error.css'
 
 const Error = ({ resetError }) => {
   return (
-    <section className="error-message">
-    <h1>The stars are not aligned, please return to home and try again.</h1>
+    <section className="error-message-section">
+    <h1 className="error">The stars are not aligned, please return to home and try again.</h1>
     <Link to='/'>
       <img 
           src={home}

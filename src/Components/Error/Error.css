@@ -1,0 +1,13 @@
+.error-message-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.error {
+  width: 50vw;
+  text-align: center;
+  color: #DAB141;
+}
