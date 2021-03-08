@@ -222,18 +222,33 @@ describe.skip('FuturMystic - Saved Readings Page', () => {
       .get('.begin-btn').click()
       .get('.reading-btn').click()
       .get('.bookmark').click()
+      .get('footer .footer-icon').eq(2).click()
   })
 
   it ('Should display the saved readings page', () => {
-   
+    cy.get('.saved-section').should('be.visible')
+      .get('h1').should('contain', 'My Saved Readings')
+      .get('p').should('contain', 'Add notes about')
+      .get('.reading-box div').get('.thumbnails').should('have.length', 3)
+      .get('textarea').should('have.value', '')
+
+    cy.url().should('contain', '/saved-readings')
   })
 
   it ('Should be able to leave a comment on the saved reading', () => {
-    
+    cy.get('textarea').type('This reading really spoke to me today, I will consider it moving forward')
+  })
+
+  it ('Should have comment persist if user navigates away from saved readings page', ()=> {
+    cy.get('footer .footer-icon').eq(1).click()
+    cy.get('.intention-section').should('be.visible')
+
+    cy.get('footer .footer-icon').eq(2).click()
+    cy.get('.saved-section').find('textarea').should('have.value', 'This reading really spoke to me today, I will consider it moving forward')
   })
 })
 
-describe('FuturMystic - Saved Readings Page', () => {
+describe.skip('FuturMystic - Error Handling', () => {
 
   const baseUrl = 'http://localhost:3000'
 
