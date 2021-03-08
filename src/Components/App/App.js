@@ -101,7 +101,9 @@ class App extends Component {
           exact
           path='/gallery'
           render={() =>  {
-            return <Gallery
+            return <Gallery 
+              fullDeck={this.state.fullDeck}
+              getCardDetails={this.getCardDetails}
             /> 
           }}
         />
@@ -131,6 +133,7 @@ class App extends Component {
         <Footer
           toggleFooter={this.toggleFooter}
           resetFavorite={this.resetFavorite}
+          getCardDeck={this.getCardDeck}
       />}
     </>
       )
