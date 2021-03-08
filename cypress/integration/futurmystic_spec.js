@@ -74,11 +74,27 @@ describe('FuturMystic - Info Page', () => {
   })
 })
 
-describe.skip('FuturMystic - Intentions Page', () => {
+describe('FuturMystic - Intentions Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 
   before(() => {
+    cy.visit(baseUrl)
+    cy.get('.landing-page-section').find('.begin-btn').click()
+   
+  })
+
+  it ('Should display the intentions page, with message, image, footer, and \'Begin\' button', () => {
+    cy.get('.intention-section').should('be.visible')
+    cy.get('.intention-section').find('h1').should('contain', 'Set your intentions')
+    cy.get('.intention-section').find('.stars').should('have.attr', 'src', '/static/media/tealstars.fae99961.png')
+    cy.get('.intention-section').find('p').should('contain', 'Take three deep breaths')
+    cy.get('.intention-section').find('.reading-btn').should('contain', 'Begin')
+   
+    cy.url().should('contain', `${baseUrl}/intention`)
+  })
+
+  it ('Should be able to click the \'Begin\' button and be taken to the reading page', () => {
     cy.fixture('mockReadingData.json')
       .then((reading) => {
         cy.intercept('GET', 'https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=3', {
@@ -86,17 +102,9 @@ describe.skip('FuturMystic - Intentions Page', () => {
         body: reading
       })
     })
-
-    cy.visit(baseUrl)
-  })
-
-  it ('Should display the intentions page, with message, image, footer, and \'Begin\' button', () => {
-    //
-    //url
-  })
-
-  it ('Should be able to click the \'Begin\' button and be taken to the reading page', () => {
     
+    cy.get('.intention-section').find('.reading-btn').click()
+    cy.get('.reading-section').should('be.visible')    
   })
 })
 
