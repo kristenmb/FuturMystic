@@ -186,18 +186,26 @@ describe.skip('FuturMystic - Card Details Page', () => {
     cy.visit(baseUrl)
       .get('.begin-btn').click()
       .get('.reading-btn').click()
+      .get('.card-container').find('.reading-card').eq(0).click()
   })
 
   it ('Should display the details for the clicked card - image and text', () => {
-   
+    cy.get('.details-section').should('be.visible')
+      .get('.details-img').should('have.attr', 'src', '../cards/wa09.jpg')
+      .get('h1').should('contain', 'Nine of Wands')
+      .get('h2').should('contain', 'Meaning')
+      .get('p').should('contain', 'The card signifies')
+      
+    cy.url().should('contain', '/Nine%20of%20Wands')
   })
 
   it ('Should be able to click back button and see full reading again', () => {
-    
+    cy.get('.back-arrow').click()
+    cy.get('.reading-section').should('be.visible')
   })
 })
 
-describe('FuturMystic - Saved Readings Page', () => {
+describe.skip('FuturMystic - Saved Readings Page', () => {
 
   const baseUrl = 'http://localhost:3000'
 
