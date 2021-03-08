@@ -9,7 +9,7 @@ import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
 import Gallery from '../Gallery/Gallery'
 import Error from '../Error/Error'
-import { fetchCards } from '../../util'
+import { fetchCards, fetchCardDeck } from '../../util'
 
 class App extends Component {
   constructor() {
@@ -20,6 +20,7 @@ class App extends Component {
       selectedCard: {},
       isFavorite: false,
       userSavedReadings: [],
+      fullDeck: [],
       error: false
     }
   }
@@ -32,6 +33,12 @@ class App extends Component {
     this.setState({ cards: [] })
     fetchCards()
       .then(cards => this.setState({ cards: cards.cards }))
+      .catch(error => this.setState({ error: true }))
+  }
+
+  getCardDeck = () => {
+    fetchCardDeck()
+      .then(deck => this.setState({ fullDeck: deck.cards }))
       .catch(error => this.setState({ error: true }))
   }
 
