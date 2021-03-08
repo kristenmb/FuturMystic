@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Image from '../Image/Image'
 import { formatDate } from '../../util'
+import PropTypes from 'prop-types'
 import './SavedReadings.css'
 
 class SavedReadings extends Component {
-  constructor({ userSavedReadings }) {
-    super({ userSavedReadings })
+  constructor(props) {
+    super(props)
     this.state = {
-      userSavedReadings: userSavedReadings
+      userSavedReadings: props.userSavedReadings
     }
   }
 
@@ -25,15 +26,14 @@ class SavedReadings extends Component {
   readingBoxes = () => {
     return this.state.userSavedReadings.map((reading, i) => {
       const getDate = parseInt(Object.keys(reading))
-      const date = formatDate(getDate)
       const cardThumbnails = reading[getDate].map(card => {
         return (
-          <Image imageName={card.name_short} className={"thumbnails"}/>
+          <Image imageName={card.name_short} className={"thumbnails"} key={card.name}/>
         )
       })
       return (
         <article className="reading-box" key={i}>
-          <h2>{date}</h2>
+          <h2>{formatDate(getDate)}</h2>
           <div>
             {cardThumbnails}
           </div>
@@ -63,4 +63,8 @@ class SavedReadings extends Component {
   }
 }
 
-export default SavedReadings;
+export default SavedReadings
+
+SavedReadings.propTypes = {
+  userSavedReadings: PropTypes.arrayOf(PropTypes.object)
+}
