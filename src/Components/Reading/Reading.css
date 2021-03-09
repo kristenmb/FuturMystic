@@ -1,3 +1,7 @@
+.reading-section {
+  animation: fadeIn ease 3s;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -21,6 +25,7 @@ header {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  height: 20rem;
 }
 
 .about-reading {
@@ -55,7 +60,28 @@ header {
 
 @media screen and (max-width: 1000px) {
   .reading-card {
-    width: 25vw;
+    width: 20vw;
     margin: 0 5vw 0 5vw;
+  }
+
+  .card-container {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .reading-card {
+    width: 25vw;
+    margin: 0 3vw 0 3vw;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

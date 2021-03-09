@@ -5,6 +5,7 @@
   margin-top: 8rem;
   width: 100vw;
   color: #DAB141;
+  animation: fadeIn ease 3s;
 }
 
 .intention-section p{
@@ -24,4 +25,14 @@
 
 .stars {
   width: 6rem
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

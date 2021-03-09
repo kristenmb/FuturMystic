@@ -7,8 +7,9 @@ import Intention from '../Intention/Intention'
 import LandingPage from '../LandingPage/LandingPage'
 import Reading from '../Reading/Reading'
 import SavedReadings from '../SavedReadings/SavedReadings'
+import Gallery from '../Gallery/Gallery'
 import Error from '../Error/Error'
-import { fetchCards } from '../../util'
+import { fetchCards, fetchCardDeck } from '../../util'
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,8 @@ class App extends Component {
       selectedCard: {},
       isFavorite: false,
       userSavedReadings: [],
+      fullDeck: [],
+      returnLocation: '',
       error: false
     }
   }
@@ -28,14 +31,23 @@ class App extends Component {
   }
 
   getReading = () => {
+    this.setState({ cards: [] })
     fetchCards()
       .then(cards => this.setState({ cards: cards.cards }))
       .catch(error => this.setState({ error: true }))
   }
 
-  getCardDetails = (event) => {
+  getCardDeck = () => {
+    fetchCardDeck()
+      .then(deck => this.setState({ fullDeck: deck.cards }))
+      .catch(error => this.setState({ error: true }))
+  }
+
+  getCardDetails = (source, location, event) => {
     const id = event.target.id
-    this.setState(prevState => ({ selectedCard: prevState.cards[id - 1]}))
+    this.setState(prevState => ({ selectedCard: prevState[source][id - 1] }))
+    this.setState({ returnLocation: location })
+    this.toggleFooter()
   }
 
   saveReading = () => {
@@ -89,7 +101,25 @@ class App extends Component {
               userSavedReadings={this.state.userSavedReadings}
             /> 
           }}
-        /> 
+        />
+        <Route
+          exact
+          path='/gallery'
+          render={() =>  {
+            return <Gallery 
+              fullDeck={this.state.fullDeck}
+              getCardDetails={this.getCardDetails}
+            /> 
+          }}
+        />
+        <Route
+            exact
+            path='/gallery/:card'
+            render={() => <CardDetails 
+              selectedCard={this.state.selectedCard}
+              returnLocation={this.state.returnLocation}
+              toggleFooter={this.toggleFooter}/>}
+          />
         <Route
           exact
           path='/reading'
@@ -103,9 +133,12 @@ class App extends Component {
           }}
         />
         <Route
-          exact
-          path='/reading/:card'
-          render={() => <CardDetails selectedCard={this.state.selectedCard}/>}
+            exact
+            path='/reading/:card'
+            render={() => <CardDetails
+              selectedCard={this.state.selectedCard}
+              returnLocation={this.state.returnLocation}
+              toggleFooter={this.toggleFooter}/>}
           />
         <Route
           path='/*'
@@ -116,6 +149,7 @@ class App extends Component {
         <Footer
           toggleFooter={this.toggleFooter}
           resetFavorite={this.resetFavorite}
+          getCardDeck={this.getCardDeck}
       />}
     </>
       )

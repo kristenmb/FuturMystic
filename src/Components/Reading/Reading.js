@@ -16,7 +16,7 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
             imageName={card.name_short}
             className={"reading-card"}
             id={i+1}
-            onClick={(event) => getCardDetails(event)}
+            onClick={(event) => getCardDetails('cards', 'reading', event)}
           />
         </article>
       </Link>
