@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90vw;
-  padding: 3rem;
+  width: 100vw;
+  padding: 3rem 0 3rem 0;
   margin: 0!important;
   animation: fadeIn ease 3s;
 }
@@ -35,6 +35,18 @@
 .gallery-title {
   color: #DAB141;
   margin: 0
+}
+
+@media screen and (max-width: 950px) {
+  .gallery-thumbnail {
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gallery-thumbnail {
+    width: 35vw;
+  }
 }
 
 @keyframes fadeIn {

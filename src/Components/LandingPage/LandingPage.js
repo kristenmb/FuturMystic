@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import hand from '../../hand.png'
+import hand from '../../assets/hand.png'
 import PropTypes from 'prop-types'
 import './LandingPage.css'
 
