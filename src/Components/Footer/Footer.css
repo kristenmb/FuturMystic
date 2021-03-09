@@ -1,7 +1,7 @@
 footer {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   height: 6rem;
   background-color: #231E2B;
   position: fixed;
@@ -11,7 +11,7 @@ footer {
 .footer-icon {
   width: 3rem;
   height: 3rem;
-  margin: 2rem;
+  margin: 1rem 2rem 0 2rem;
 }
 
 .footer-saved {
