@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../Footer/Footer'
 import arrow from '../../assets/backarrow.png'
 import { cardImages } from '../../tarotData'
 import PropTypes from 'prop-types'
@@ -38,5 +37,7 @@ function CardDetails({ selectedCard, returnLocation, toggleFooter }) {
 export default CardDetails;
 
 CardDetails.propTypes = {
-  selectedCard: PropTypes.object
+  selectedCard: PropTypes.object,
+  returnLocation: PropTypes.string, 
+  toggleFooter: PropTypes.func
 }
