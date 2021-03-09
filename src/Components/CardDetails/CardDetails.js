@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../Footer/Footer'
 import arrow from '../../assets/backarrow.png'
 import { cardImages } from '../../tarotData'
 import PropTypes from 'prop-types'

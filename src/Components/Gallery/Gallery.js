@@ -1,6 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Image from '../Image/Image'
-import Footer from '../Footer/Footer'
 import { Link } from 'react-router-dom'
 import './Gallery.css'
 
@@ -15,7 +15,6 @@ const Gallery = ({ fullDeck, getCardDetails }) => {
             id={i+1}
             onClick={(event) => getCardDetails('fullDeck', 'gallery', event)}
           />
-          <Footer />
         </article>
       </Link>
      )
