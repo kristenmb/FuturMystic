@@ -248,6 +248,46 @@ describe('FuturMystic - Saved Readings Page', () => {
   })
 })
 
+describe('FuturMystic - Gallery View', () => {
+
+  const baseUrl = 'http://localhost:3000'
+
+  before(() => {
+      cy.fixture('mockDeckData.json')
+      .then((deck) => {
+        cy.intercept('GET', 'https://rws-cards-api.herokuapp.com/api/v1/cards', {
+        statusCode: 200,
+        body: deck
+      })
+    })
+
+    cy.visit(baseUrl)
+      .get('.begin-btn').click()
+      .get('footer .footer-icon').eq(3).click()
+  })
+
+  it ('Should display gallery view page with heading, directions, and cards', () => {
+    cy.get('.gallery-section').should('be.visible')
+      .get('.gallery-title').should('contain', 'Card Gallery')
+      .get('.gallery-desc').should('contain', 'Click through the cards')
+      .get('.gallery-thumbnail').should('have.length', 5)
+
+    cy.url().should('contain', '/gallery')
+  })
+
+  it ('Should be able to click a card to view more information', () => {
+    cy.get('.gallery-thumbnail').eq(1).click()
+      .get('.details-section').should('be.visible')
+
+    cy.url().should('contain', '/gallery/The%20High%20Priestess')
+  })
+
+  it ('Should be able to navigate back to the gallery view with the back button', () => {
+    cy.get('.back-arrow').click()
+      .get('.gallery-section').should('be.visible')
+  })
+})
+
 describe('FuturMystic - Error Handling', () => {
 
   const baseUrl = 'http://localhost:3000'
