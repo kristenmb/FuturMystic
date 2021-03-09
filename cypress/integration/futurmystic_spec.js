@@ -19,14 +19,14 @@ describe('FuturMystic - Landing Page', () => {
   it ('Should be able to click the \'Where do I Start\' button and be taken to the info page', () => {
     cy.get('.landing-page-section').find('.info-btn').click()
     cy.get('.info-section').should('be.visible')
-    cy.url().should('contain', `${baseUrl}/info`)
+    cy.url().should('contain', `/info`)
     cy.get('footer .footer-icon').eq(0).click()
   })
 
   it ('Should be able to click the \'Begin Reading\' button and be taken to the intentions page', () => {
     cy.get('.landing-page-section').find('.begin-btn').click()
     cy.get('.intention-section').should('be.visible')
-    cy.url().should('contain', `${baseUrl}/intention`)
+    cy.url().should('contain', `/intention`)
   })
 })
 
@@ -62,7 +62,7 @@ describe('FuturMystic - Info Page', () => {
   })
 
    it ('Should be able to use the footer buttons to navigate through the site', () => {
-    cy.get('footer').find('.footer-icon').should('have.length', 3)
+    cy.get('footer').find('.footer-icon').should('have.length', 4)
     cy.get('footer .footer-icon').eq(0).click()
     cy.get('.landing-page-section').find('.info-btn').click()
 
@@ -91,7 +91,7 @@ describe('FuturMystic - Intentions Page', () => {
     cy.get('.intention-section').find('p').should('contain', 'Take three deep breaths')
     cy.get('.intention-section').find('.reading-btn').should('contain', 'Begin')
    
-    cy.url().should('contain', `${baseUrl}/intention`)
+    cy.url().should('contain', `/intention`)
   })
 
   it ('Should be able to click the \'Begin\' button and be taken to the reading page', () => {
@@ -140,7 +140,7 @@ describe('FuturMystic - Reading Page', () => {
 
     cy.get('header').should('be.visible')
 
-    cy.url(`${baseUrl}/reading`)
+    cy.url(`/reading`)
   })
 
   it ('Should be able to click each card to view details', () => {
