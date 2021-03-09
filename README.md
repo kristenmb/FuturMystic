@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# FuturMystic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A tarot card reading app for beginners.
 
-## Available Scripts
+The goal of this project was to create an app for a niche audience within a week. 
 
-In the project directory, you can run:
+## Usage
+A User lands on the main page of the app and can either learn more about Tarot, or begin a reading. Once a user clicks ‘Where Do I Start’, they are taken to an info page with tips on how to get started with Tarot readings. From here users can return to home, view the full gallery of cards, start a reading, or view their saved readings. 
 
-### `npm start`
+![gif of site](https://media.giphy.com/media/plFwmDRhUtC06EnGya/giphy.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When a user is ready to begin a reading they will be taken to the Intentions page. Here they can begin their reading when they are ready. After clicking ‘Begin’ the user will be shown a three card reading with a bit of further information on how to interpret the cards. Should a use want to learn more about a card they can click on it to see the meaning behind it. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![gif of site](https://media.giphy.com/media/cFK9C0mOVQxuuq5uvb/giphy.gif)
 
-### `npm test`
+If a user wants to save their reading for continued reflection, they can click the bookmark button in the top right hand corner of the reading page. Then they can view their saved readings by navigating through the starred bookmark icon in the footer. While on the saved readings page, the user can leave comments on their previous readings, or update a comment. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![gif of site](https://media.giphy.com/media/jNq0qXQsYNcXWvcCIk/giphy.gif)
 
-### `npm run build`
+Should the user like to browse through the tarot deck in full, they can use the gallery icon in the footer to view the whole deck and click specific cards they would like to know more about. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![gif of site](https://media.giphy.com/media/gE635tLQj3Z7mnJNl3/giphy.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*Images of the cards were taken of The Wild Unknown Deck by [Kim Krans](https://www.thewildunknown.com/collections/shop-the-magic)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Install
+1. `fork` this repository
+2. `git clone` it down to your command line
+3. Navigate into the repository on your machine
+4. Run `npm i`
+5. Run `npm start`
 
-### `npm run eject`
+To run tests: `npm run cypress`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+OR
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Visit the deployed site [here](http://futur-mystic.herokuapp.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Please note: Both Heroku and the site this api are hosted on can take time to ‘wake up’ when they haven’t been accessed recently. Please be patient with the initial load.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Planning
+I utilized GitHub Projects for project management, that board can be found [here](https://github.com/kristenmb/FuturMystic/projects/1) <br/>
+The detailed spec for this project can be found [here](https://frontend.turing.io/projects/module-3/niche-audience.html) <br/>
+My wireframing can be found [here](https://miro.com/app/board/o9J_lRHqcFQ=/)
 
-## Learn More
+## Challenges & Wins
+> This project presented a few logic challenges that I wasn’t expecting. Firstly, to be able to add a comment to the saved readings, which were stored as objects, I had to find a way to adapt only the value of the ‘comment’ key in the object for that specific reading. I ended up finding the answer in Object.assign which was new to me. Secondly, because the api I chose to use did not include images, I had to find a way to render the correct image with the appropriate cards when they were returned from the api. For this I created an object with keys named after one of properties returned from the api, and each key held an object with the file path to the image and alt text. I was then able to use bracket notation to bring in the correct image for whatever card was rendered.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> I used Router in a much more detailed way than I had in past projects, so initially this presented some challenges, but I am happy with the routes I created, and even implemented a wild card route for any errors and potential url mis-types.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
+1. React
+2. React Router
+3. Cypress
+4. CSS
+5. RESTful api - documentation found [here](https://app.swaggerhub.com/apis/ekswagger/rws-tarot_card_api/1.0.0#/Get%20cards/get_cards_random)
 
-### Code Splitting
+## Future Iterations
+- I would like to create my own tarot API using express to customize the information for the cards as well as add images. I would also consider adding endpoints that would provide the information about how to read the cards as well. This would clean up the app so much and allow for much more dynamic uses of the information. 
+- I would also like to implement Local Storage to persist user data across sessions so they can keep their readings and comments on hand. 
+- I am interested in converting this project to use React Hooks and the Context API - another way to clean up a lot of the data.
+- I want to add logic to display the cards randomly upright or reversed as they would occur in a real tarot card reading. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Members
+This project was designed and implemented by [Kristen Bair](https://github.com/kristenmb)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
