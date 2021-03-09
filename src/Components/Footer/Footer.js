@@ -2,11 +2,12 @@ import React from 'react'
 import cardsBtn from '../../assets/tealcards.png'
 import saved from '../../assets/tealgoldsaved.png'
 import home from '../../assets/home.png'
+import gallery from '../../assets/gallery.png'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
-function Footer({ toggleFooter, resetFavorite }) {
+function Footer({ toggleFooter, resetFavorite, getCardDeck }) {
   return (
     <footer>
       <Link to='/' onClick={toggleFooter}> 
@@ -31,6 +32,14 @@ function Footer({ toggleFooter, resetFavorite }) {
           className="footer-saved footer-icon"
         />
       </Link>
+      <Link to='/gallery'>
+        <img 
+          src={gallery}
+          alt="Nine small cards"
+          className="footer-icon"
+          onClick={getCardDeck}
+        />
+      </Link>
     </footer>
   );
 }
@@ -39,5 +48,6 @@ export default Footer;
 
 Footer.propTypes = {
   toggleFooter: PropTypes.func,
-  resetFavorite: PropTypes.func
+  resetFavorite: PropTypes.func,
+  getCardDeck: PropTypes.func
 }

@@ -6,6 +6,14 @@ export const fetchCards = () => {
     })
 }
 
+export const fetchCardDeck = () => {
+  return fetch('https://rws-cards-api.herokuapp.com/api/v1/cards')
+    .then(response => {
+      handleErrors(response)
+      return response.json()
+    }) 
+}
+
 const handleErrors = (res) => {
   if (!res.ok) {
     throw new Error()
