@@ -7,19 +7,19 @@ The goal of this project was to create an app for a niche audience within a week
 ## Usage
 A User lands on the main page of the app and can either learn more about Tarot, or begin a reading. Once a user clicks ‘Where Do I Start’, they are taken to an info page with tips on how to get started with Tarot readings. From here users can return to home, view the full gallery of cards, start a reading, or view their saved readings. 
 
-![gif of site](https://media.giphy.com/media/plFwmDRhUtC06EnGya/giphy.gif)
+![gif of info](https://media.giphy.com/media/plFwmDRhUtC06EnGya/giphy.gif)
 
 When a user is ready to begin a reading they will be taken to the Intentions page. Here they can begin their reading when they are ready. After clicking ‘Begin’ the user will be shown a three card reading with a bit of further information on how to interpret the cards. Should a use want to learn more about a card they can click on it to see the meaning behind it. 
 
-![gif of site](https://media.giphy.com/media/cFK9C0mOVQxuuq5uvb/giphy.gif)
+![gif of reading](https://media.giphy.com/media/cFK9C0mOVQxuuq5uvb/giphy.gif)
 
 If a user wants to save their reading for continued reflection, they can click the bookmark button in the top right hand corner of the reading page. Then they can view their saved readings by navigating through the starred bookmark icon in the footer. While on the saved readings page, the user can leave comments on their previous readings, or update a comment. 
 
-![gif of site](https://media.giphy.com/media/jNq0qXQsYNcXWvcCIk/giphy.gif)
+![gif of saved reading](https://media.giphy.com/media/jNq0qXQsYNcXWvcCIk/giphy.gif)
 
 Should the user like to browse through the tarot deck in full, they can use the gallery icon in the footer to view the whole deck and click specific cards they would like to know more about. 
 
-[](https://media.giphy.com/media/Ne01iaD8CEcZRSNqq6/giphy.gif)
+[gif of gallery](https://media.giphy.com/media/Ne01iaD8CEcZRSNqq6/giphy.gif)
 
 
 *Images of the cards were taken of The Wild Unknown Deck by [Kim Krans](https://www.thewildunknown.com/collections/shop-the-magic)
