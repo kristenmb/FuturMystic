@@ -38,5 +38,7 @@ function CardDetails({ selectedCard, returnLocation, toggleFooter }) {
 export default CardDetails;
 
 CardDetails.propTypes = {
-  selectedCard: PropTypes.object
+  selectedCard: PropTypes.object,
+  returnLocation: PropTypes.string, 
+  toggleFooter: PropTypes.func
 }

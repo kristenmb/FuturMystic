@@ -33,3 +33,8 @@ const Gallery = ({ fullDeck, getCardDetails }) => {
 }
 
 export default Gallery
+
+Gallery.propTypes = {
+  fullDeck: PropTypes.arrayOf(PropTypes.object),
+  getCardDetails: PropTypes.func
+}
