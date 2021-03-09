@@ -19,7 +19,7 @@ If a user wants to save their reading for continued reflection, they can click t
 
 Should the user like to browse through the tarot deck in full, they can use the gallery icon in the footer to view the whole deck and click specific cards they would like to know more about. 
 
-![gif of site](https://media.giphy.com/media/Ne01iaD8CEcZRSNqq6/giphy.gif)
+![](https://media.giphy.com/media/Ne01iaD8CEcZRSNqq6/giphy.gif)
 
 
 *Images of the cards were taken of The Wild Unknown Deck by [Kim Krans](https://www.thewildunknown.com/collections/shop-the-magic)
