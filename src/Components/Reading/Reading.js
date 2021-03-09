@@ -27,7 +27,7 @@ function Reading({ cards, getCardDetails, isFavorite, saveReading }) {
       <header>
         <img
           src={isFavorite ? fullBookmark : emptyBookmark}
-          alt="Outline of bookmark"
+          alt={isFavorite ? "Filled bookmark" : "Outline of bookmark"}
           className="bookmark"
           onClick={saveReading}
         />

@@ -82,10 +82,12 @@ class App extends Component {
           }}
         />      
         <Route 
+          exact
           path='/info'
           component={ Info }
         />
-        <Route 
+        <Route
+          exact
           path='/intention'
           render={() => {
             return <Intention getReading={this.getReading}/>

@@ -1,0 +1,37 @@
+{
+  "cards": [
+    {
+      "name": "Nine of Wands",
+      "name_short": "wa09",
+      "value": "nine",
+      "value_int": 9,
+      "suit": "wands",
+      "type": "minor",
+      "meaning_up": "The card signifies strength in opposition. If attacked, the person will meet an onslaught boldly; and his build shews, that he may prove a formidable antagonist. With this main significance there are all its possible adjuncts--delay, suspension, adjournment.",
+      "meaning_rev": "Obstacles, adversity, calamity.",
+      "desc": "The figure leans upon his staff and has an expectant look, as if awaiting an enemy. Behind are eight other staves--erect, in orderly disposition, like a palisade."
+    },
+    {
+      "name": "King of Cups",
+      "name_short": "cuki",
+      "value": "king",
+      "value_int": 14,
+      "suit": "cups",
+      "type": "minor",
+      "meaning_up": "Fair man, man of business, law, or divinity; responsible, disposed to oblige the Querent; also equity, art and science, including those who profess science, law and art; creative intelligence.",
+      "meaning_rev": "Dishonest, double-dealing man; roguery, exaction, injustice, vice, scandal, pillage, considerable loss.",
+      "desc": "He holds a short sceptre in his left hand and a great cup in his right; his throne is set upon the sea; on one side a ship is riding and on the other a dolphin is leaping. The implicit is that the Sign of the Cup naturally refers to water, which appears in all the court cards."
+    },
+    {
+      "name": "Two of Cups",
+      "name_short": "cu02",
+      "value": "two",
+      "value_int": 2,
+      "suit": "cups",
+      "type": "minor",
+      "meaning_up": "Love, passion, friendship, affinity, union, concord, sympathy, the interrelation of the sexes, and--as a suggestion apart from all offices of divination--that desire which is not in Nature, but by which Nature is sanctified.",
+      "meaning_rev": "",
+      "desc": "A youth and maiden are pledging one another, and above their cups rises the Caduceus of Hermes, between the great wings of which there appears a lion's head. It is a variant of a sign which is found in a few old examples of this card. Some curious emblematical meanings are attached to it, but they do not concern us in this place."
+    }
+  ]
+}
