@@ -6,7 +6,7 @@ import { cardImages } from '../../tarotData'
 import PropTypes from 'prop-types'
 import './CardDetails.css'
 
-function CardDetails({ selectedCard, returnLocation }) {
+function CardDetails({ selectedCard, returnLocation, toggleFooter }) {
   return (
     <>
       <header className="details-header">
@@ -15,6 +15,7 @@ function CardDetails({ selectedCard, returnLocation }) {
             className="back-arrow"
             src={arrow}
             alt="Arrow pointing left"
+            onClick={toggleFooter}
           />
         </Link>
       </header>

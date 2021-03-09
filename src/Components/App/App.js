@@ -47,6 +47,7 @@ class App extends Component {
     const id = event.target.id
     this.setState(prevState => ({ selectedCard: prevState[source][id - 1] }))
     this.setState({ returnLocation: location })
+    this.toggleFooter()
   }
 
   saveReading = () => {
@@ -114,7 +115,8 @@ class App extends Component {
             path='/gallery/:card'
             render={() => <CardDetails 
               selectedCard={this.state.selectedCard}
-              returnLocation={this.state.returnLocation}/>}
+              returnLocation={this.state.returnLocation}
+              toggleFooter={this.toggleFooter}/>}
           />
         <Route
           exact
@@ -133,7 +135,8 @@ class App extends Component {
             path='/reading/:card'
             render={() => <CardDetails
               selectedCard={this.state.selectedCard}
-              returnLocation={this.state.returnLocation}/>}
+              returnLocation={this.state.returnLocation}
+              toggleFooter={this.toggleFooter}/>}
           />
         <Route
           path='/*'
