@@ -6,6 +6,7 @@
   width: 90vw;
   padding: 3rem;
   margin: 0!important;
+  animation: fadeIn ease 3s;
 }
 
 .gallery-thumbnail {
@@ -34,4 +35,14 @@
 .gallery-title {
   color: #DAB141;
   margin: 0
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
