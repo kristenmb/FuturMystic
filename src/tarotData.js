@@ -4,7 +4,7 @@ export const cardImages = {
   ar01: {src: './cards/ar01.jpg', alt: "A majestic leopard looks to the right with its front paws on a pentacle. A cup, wand, and sword sit in front of the leopard."},
   ar02: {src: './cards/ar02.jpg', alt: "A regal white tiger lounges under a crescent moon with a multicolored orb between its paws."},
   ar03: {src: './cards/ar03.jpg', alt: "A large tree under a crescent moon. The edge of the tree are pink as if it is burning."},
-  ar04: {src: './cards/ar04.jpg', alt: "A tall tree stands alone in a field with a burning sun above. "},
+  ar04: {src: './cards/ar04.jpg', alt: "A tall tree stands alone in a field with a burning sun above."},
   ar05: {src: './cards/ar05.jpg', alt: "A crow balancing on a key with its beak open. Lightning strikes in the background."},
   ar06: {src: './cards/ar06.jpg', alt: "Two canadian geese fly together in front of a burst of colors."},
   ar07: {src: './cards/ar07.jpg', alt: "A white horse stands, main blowing in the wind, with a crescent moon on its forehead, and a pentacle pendant around its neck."},
